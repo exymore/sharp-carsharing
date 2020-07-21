@@ -17,7 +17,7 @@ export default StyleSheet.create({
 
   gestureArea: {
     width: DEVICE.width,
-    height: 20,
+    height: 40,
 
     marginTop: 10,
     position: 'absolute',
