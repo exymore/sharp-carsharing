@@ -8,8 +8,8 @@ const animatedPosition = new Animated.Value(STARTING_POSITION);
 function animateMove(toValue) {
   Animated.spring(animatedPosition, {
     toValue,
-    tension: 120,
-    friction: 18,
+    tension: 160,
+    friction: 14,
     useNativeDriver: false,
   }).start();
 }
