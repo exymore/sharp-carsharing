@@ -1,7 +1,7 @@
 export default {
   WHITE: '#FFF',
-  BLACK: '#000',
+  BLACK: '#0c0c0c',
   PRIMARY: '#5FB0FF',
-  SECONDARY: '#C5B7AF',
+  SECONDARY: '#707070',
   BORDER: '#f3f3f3',
 };

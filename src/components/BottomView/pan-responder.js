@@ -31,7 +31,6 @@ function getResultPosition(gestureState) {
 }
 
 function movementValue(gestureState) {
-  console.log(gestureState.moveY);
   return gestureState.moveY;
 }
 

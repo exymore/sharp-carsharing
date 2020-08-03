@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, DynamicColorIOS, PlatformColor } from 'react-native';
 import { DEVICE, COLORS } from '../../constants';
 
 export default StyleSheet.create({
@@ -9,8 +9,12 @@ export default StyleSheet.create({
     borderTopRightRadius: 10,
     borderWidth: 1,
     borderColor: COLORS.BORDER,
+    padding: 16,
 
-    backgroundColor: COLORS.WHITE,
+    backgroundColor: DynamicColorIOS({
+      light: PlatformColor('label'),
+      dark: PlatformColor('label'),
+    }),
 
     elevation: 6,
   },

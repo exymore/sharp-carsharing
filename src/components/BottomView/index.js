@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Animated, SafeAreaView } from 'react-native';
+import { View, Animated, SafeAreaView, Text } from 'react-native';
 
 import { animatedPosition, panGesture } from './pan-responder';
 import styles from './styles';
 
-const BottomView = () => (
+const BottomView = ({ children }) => (
   <Animated.View
     style={[styles.container, { transform: [{ translateY: animatedPosition }] }]}
   >
@@ -12,9 +12,7 @@ const BottomView = () => (
       <View style={styles.pullItem} />
     </View>
 
-    <SafeAreaView style={styles.content}>
-      <View style={styles.container} />
-    </SafeAreaView>
+    <SafeAreaView style={styles.content}>{children}</SafeAreaView>
   </Animated.View>
 );
 
