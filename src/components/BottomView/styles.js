@@ -7,14 +7,7 @@ export default StyleSheet.create({
 
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    borderWidth: 1,
-    borderColor: COLORS.BORDER,
     padding: 16,
-
-    backgroundColor: DynamicColorIOS({
-      light: PlatformColor('label'),
-      dark: PlatformColor('label'),
-    }),
 
     elevation: 6,
   },
@@ -26,7 +19,6 @@ export default StyleSheet.create({
     marginTop: 10,
     position: 'absolute',
 
-    backgroundColor: COLORS.WHITE,
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
@@ -37,7 +29,10 @@ export default StyleSheet.create({
 
     borderRadius: 20,
 
-    backgroundColor: COLORS.SECONDARY,
+    backgroundColor: DynamicColorIOS({
+      light: PlatformColor('systemGray4'),
+      dark: PlatformColor('systemGray2'),
+    }),
   },
 
   content: {

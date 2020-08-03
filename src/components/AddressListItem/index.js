@@ -1,11 +1,17 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import {
+  Platform,
+  PlatformColor,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+} from 'react-native';
 import { iOSColors } from 'react-native-typography';
 import { typography } from '../../constants/typography';
-import { useAppearance } from '../../services/hooks/useAppearance';
 
 const AddressListItem = ({ name, address, icon, last }) => {
-  const appearance = useAppearance();
+  const appearance = useColorScheme();
 
   return (
     <View style={styles.container}>
