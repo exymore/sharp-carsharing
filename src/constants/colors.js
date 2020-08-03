@@ -1,7 +1,22 @@
-export default {
-  WHITE: '#FFF',
-  BLACK: '#0c0c0c',
-  PRIMARY: '#5FB0FF',
-  SECONDARY: '#707070',
-  BORDER: '#f3f3f3',
+import { iOSColors, material } from 'react-native-typography';
+import { DynamicColorIOS, PlatformColor } from 'react-native';
+
+export const colors = {
+  android: {
+    blackWhite: material.titleWhite,
+  },
+  ios: {
+    blackWhite: DynamicColorIOS({
+      light: PlatformColor('label'),
+      dark: PlatformColor('label'),
+    }),
+    blackWhiteLegacy: DynamicColorIOS({
+      light: iOSColors.black,
+      dark: iOSColors.gray,
+    }),
+    grey: DynamicColorIOS({
+      light: PlatformColor('separator'),
+      dark: PlatformColor('separator'),
+    }),
+  },
 };

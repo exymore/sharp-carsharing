@@ -3,7 +3,6 @@ import {
   View,
   Animated,
   SafeAreaView,
-  Text,
   DynamicColorIOS,
   PlatformColor,
   useColorScheme,
