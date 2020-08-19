@@ -1,5 +1,5 @@
 import { StyleSheet, DynamicColorIOS, PlatformColor } from 'react-native';
-import { DEVICE, COLORS } from '../../constants';
+import { DEVICE } from '../../constants';
 
 export default StyleSheet.create({
   container: {

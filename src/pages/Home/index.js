@@ -1,19 +1,27 @@
 import { View, StyleSheet } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import { faHome, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import BottomView from '../../components/BottomView';
 import Map from '../../components/Map';
 import AddressListItem from '../../components/AddressListItem';
+import { mockCoordinates } from '../../mocks/coordinates';
 
 function HomeScreen({ navigation }) {
   const placesMock = [
-    { name: 'Home', address: 'Hryshina 59', icon: faHome },
-    { name: 'Work', address: 'Leninskaya 9', icon: faBriefcase },
+    { name: 'Home', address: 'Hryshina 59', icon: faHome, coords: mockCoordinates.home },
+    {
+      name: 'Work',
+      address: 'Leninskaya 9',
+      icon: faBriefcase,
+      coords: mockCoordinates.work,
+    },
   ];
+
+  const [region, setRegion] = useState(null);
 
   return (
     <View style={styles.background}>
-      <Map />
+      <Map region={region} />
       <BottomView>
         {placesMock.map(place => (
           <AddressListItem
@@ -21,6 +29,8 @@ function HomeScreen({ navigation }) {
             name={place.name}
             address={place.address}
             icon={place.icon}
+            coords={place.coords}
+            handleClick={setRegion}
           />
         ))}
       </BottomView>

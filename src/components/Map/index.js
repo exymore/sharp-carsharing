@@ -1,23 +1,35 @@
 import React, { useContext } from 'react';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import { View, StyleSheet } from 'react-native';
 import { DEVICE } from '../../constants';
 import { LocationContext } from '../../context/location';
+import MapMarker from '../MapMarker';
+import { mapConstants } from '../../constants/maps';
 
-const Map = () => {
+const Map = ({ region }) => {
   const location = useContext(LocationContext);
 
   return (
     <View style={styles.container}>
       <MapView
         style={styles.map}
-        region={{
+        loadingEnabled
+        initialRegion={{
           latitude: location.coords.latitude,
           longitude: location.coords.longitude,
-          latitudeDelta: 0.015,
-          longitudeDelta: 0.0121,
+          ...mapConstants.mapDeltas,
         }}
-      />
+        region={region}
+      >
+        <Marker
+          coordinate={{
+            latitude: location.coords.latitude,
+            longitude: location.coords.longitude,
+          }}
+        >
+          <MapMarker />
+        </Marker>
+      </MapView>
     </View>
   );
 };

@@ -18,5 +18,9 @@ export const colors = {
       light: PlatformColor('separator'),
       dark: PlatformColor('separator'),
     }),
+    blue: DynamicColorIOS({
+      light: PlatformColor('systemBlue'),
+      dark: PlatformColor('systemBlue'),
+    }),
   },
 };

@@ -1,22 +1,38 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, useColorScheme, View } from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  useColorScheme,
+  View,
+} from 'react-native';
 import { iOSColors } from 'react-native-typography';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { typography } from '../../constants/typography';
 import { colors } from '../../constants/colors';
+import { mapConstants } from '../../constants/maps';
 
-const AddressListItem = ({ name, address, icon, last }) => {
+const AddressListItem = ({ name, address, icon, last, coords, handleClick }) => {
   const appearance = useColorScheme();
 
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      activeOpacity={0.6}
+      style={styles.container}
+      onPress={() => handleClick({ ...coords, ...mapConstants.mapDeltas })}
+    >
       <View style={styles.content}>
         <View style={styles.iconContainer}>
-          <FontAwesomeIcon
-            style={{ color: colors[Platform.OS].blackWhiteLegacy?.dynamic?.[appearance] }}
-            size={24}
-            icon={icon}
-          />
+          {icon ? (
+            <FontAwesomeIcon
+              style={{
+                color: colors[Platform.OS].blackWhiteLegacy?.dynamic?.[appearance],
+              }}
+              size={24}
+              icon={icon}
+            />
+          ) : null}
         </View>
         <View style={styles.tileContainer}>
           <Text style={typography[appearance][Platform.OS].title}>{name}</Text>
@@ -24,7 +40,7 @@ const AddressListItem = ({ name, address, icon, last }) => {
         </View>
       </View>
       {!last ? <View style={styles.separator} /> : null}
-    </View>
+    </TouchableOpacity>
   );
 };
 

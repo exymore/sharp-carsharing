@@ -42,7 +42,7 @@ function App() {
           <NativeStack.Navigator>
             {location === null ? (
               <NativeStack.Screen
-                name="Details"
+                name="Splash"
                 component={DetailsScreen}
                 options={{ stackPresentation: 'modal', animationTypeForReplace: 'pop' }}
               />
@@ -51,7 +51,12 @@ function App() {
                 <NativeStack.Screen
                   name="Home"
                   component={HomeScreen}
-                  options={{ title: 'Home', headerShown: false }}
+                  options={{ headerShown: false }}
+                />
+                <NativeStack.Screen
+                  name="Settings"
+                  component={DetailsScreen}
+                  options={{ stackPresentation: 'modal', animationTypeForReplace: 'pop' }}
                 />
               </>
             )}
