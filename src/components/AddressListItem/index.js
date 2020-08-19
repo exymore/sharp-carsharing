@@ -12,9 +12,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { typography } from '../../constants/typography';
 import { colors } from '../../constants/colors';
 import { mapConstants } from '../../constants/maps';
+import { useColors } from '../../services/hooks/useColors';
 
 const AddressListItem = ({ name, address, icon, last, coords, handleClick }) => {
   const appearance = useColorScheme();
+  const colors = useColors();
 
   return (
     <TouchableOpacity
@@ -27,7 +29,7 @@ const AddressListItem = ({ name, address, icon, last, coords, handleClick }) => 
           {icon ? (
             <FontAwesomeIcon
               style={{
-                color: colors[Platform.OS].blackWhiteLegacy?.dynamic?.[appearance],
+                color: colors.greyLegacy,
               }}
               size={24}
               icon={icon}

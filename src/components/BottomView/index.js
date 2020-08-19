@@ -1,23 +1,12 @@
 import React from 'react';
-import {
-  View,
-  Animated,
-  SafeAreaView,
-  DynamicColorIOS,
-  PlatformColor,
-  useColorScheme,
-} from 'react-native';
-
+import { View, Animated, SafeAreaView } from 'react-native';
 import { animatedPosition, panGesture } from './pan-responder';
 import styles from './styles';
+import { useColors } from '../../services/hooks/useColors';
 
 const BottomView = ({ children }) => {
-  const appearance = useColorScheme();
-
-  const backgroundColor = DynamicColorIOS({
-    light: PlatformColor('systemGray6'),
-    dark: PlatformColor('systemGray4'),
-  })?.dynamic?.[appearance];
+  const colors = useColors();
+  const backgroundColor = colors.background;
 
   return (
     <Animated.View

@@ -5,6 +5,7 @@ import BottomView from '../../components/BottomView';
 import Map from '../../components/Map';
 import AddressListItem from '../../components/AddressListItem';
 import { mockCoordinates } from '../../mocks/coordinates';
+import MapControls from '../../components/MapControls';
 
 function HomeScreen({ navigation }) {
   const placesMock = [
@@ -22,6 +23,7 @@ function HomeScreen({ navigation }) {
   return (
     <View style={styles.background}>
       <Map region={region} />
+      <MapControls />
       <BottomView>
         {placesMock.map(place => (
           <AddressListItem

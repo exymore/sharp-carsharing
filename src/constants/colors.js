@@ -6,12 +6,16 @@ export const colors = {
     blackWhite: material.titleWhite,
   },
   ios: {
+    background: DynamicColorIOS({
+      light: PlatformColor('systemGray6'),
+      dark: PlatformColor('systemGray4'),
+    }),
     blackWhite: DynamicColorIOS({
       light: PlatformColor('label'),
       dark: PlatformColor('label'),
     }),
-    blackWhiteLegacy: DynamicColorIOS({
-      light: iOSColors.black,
+    greyLegacy: DynamicColorIOS({
+      light: iOSColors.gray,
       dark: iOSColors.gray,
     }),
     grey: DynamicColorIOS({
