@@ -6,3 +6,6 @@ export const mapConstants = {
 };
 
 export const mapDelta = 0.001;
+
+export const minDelta = 0.001;
+export const maxDelta = 100;

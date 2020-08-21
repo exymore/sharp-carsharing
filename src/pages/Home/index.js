@@ -6,7 +6,7 @@ import Map from '../../components/Map';
 import AddressListItem from '../../components/AddressListItem';
 import { mockCoordinates } from '../../mocks/coordinates';
 import MapControls from '../../components/MapControls';
-import { mapConstants, mapDelta } from '../../constants/maps';
+import { mapConstants, mapDelta, minDelta } from '../../constants/maps';
 import { LocationContext } from '../../context/location';
 import { DEVICE } from '../../constants';
 
@@ -35,13 +35,12 @@ function HomeScreen({ navigation }) {
   const [region, setRegion] = useState(initialRegion);
 
   const _zoom = delta => {
-    const resultDelta = localDeltas.latitudeDelta + delta;
-    if (resultDelta > 0) {
-      setLocalDeltas({
-        ...localDeltas,
-        latitudeDelta: resultDelta,
-      });
-    }
+    let resultDelta = localDeltas.latitudeDelta + delta;
+    if (resultDelta < 0) resultDelta = minDelta;
+    setLocalDeltas({
+      ...localDeltas,
+      latitudeDelta: resultDelta,
+    });
   };
 
   const zoomIn = () => _zoom(-mapDelta - DEVICE.width / DEVICE.height);
