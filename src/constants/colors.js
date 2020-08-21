@@ -10,6 +10,10 @@ export const colors = {
       light: PlatformColor('systemGray6'),
       dark: PlatformColor('systemGray4'),
     }),
+    backgroundPressed: DynamicColorIOS({
+      light: PlatformColor('systemGray5'),
+      dark: PlatformColor('systemGray3'),
+    }),
     blackWhite: DynamicColorIOS({
       light: PlatformColor('label'),
       dark: PlatformColor('label'),

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { useColors } from '../../services/hooks/useColors';
 
@@ -12,16 +12,34 @@ const MapControlsButton = ({ icon, handleClick }) => {
       width: 42,
       height: 42,
       borderRadius: 100,
-      backgroundColor: colors.background,
       justifyContent: 'center',
       alignItems: 'center',
+
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 12,
+      },
+      shadowOpacity: 0.24,
+      shadowRadius: 16.0,
     },
   });
 
   return (
-    <TouchableOpacity style={styles.button} onPress={handleClick}>
-      <FontAwesomeIcon icon={icon} />
-    </TouchableOpacity>
+    <Pressable
+      style={({ pressed }) => [
+        { backgroundColor: pressed ? colors.backgroundPressed : colors.background },
+        styles.button,
+      ]}
+      onPress={handleClick}
+    >
+      <FontAwesomeIcon
+        icon={icon}
+        style={{
+          color: colors.greyLegacy,
+        }}
+      />
+    </Pressable>
   );
 };
 

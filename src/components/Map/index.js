@@ -11,16 +11,7 @@ const Map = ({ region }) => {
 
   return (
     <View style={styles.container}>
-      <MapView
-        style={styles.map}
-        loadingEnabled
-        initialRegion={{
-          latitude: location.coords.latitude,
-          longitude: location.coords.longitude,
-          ...mapConstants.mapDeltas,
-        }}
-        region={region}
-      >
+      <MapView style={styles.map} loadingEnabled region={region}>
         <Marker
           coordinate={{
             latitude: location.coords.latitude,

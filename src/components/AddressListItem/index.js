@@ -10,8 +10,6 @@ import {
 import { iOSColors } from 'react-native-typography';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { typography } from '../../constants/typography';
-import { colors } from '../../constants/colors';
-import { mapConstants } from '../../constants/maps';
 import { useColors } from '../../services/hooks/useColors';
 
 const AddressListItem = ({ name, address, icon, last, coords, handleClick }) => {
@@ -22,7 +20,7 @@ const AddressListItem = ({ name, address, icon, last, coords, handleClick }) => 
     <TouchableOpacity
       activeOpacity={0.6}
       style={styles.container}
-      onPress={() => handleClick({ ...coords, ...mapConstants.mapDeltas })}
+      onPress={() => handleClick(coords)}
     >
       <View style={styles.content}>
         <View style={styles.iconContainer}>
@@ -41,7 +39,9 @@ const AddressListItem = ({ name, address, icon, last, coords, handleClick }) => 
           <Text style={styles.addressText}>{address}</Text>
         </View>
       </View>
-      {!last ? <View style={styles.separator} /> : null}
+      {!last ? (
+        <View style={[styles.separator, { backgroundColor: colors.grey }]} />
+      ) : null}
     </TouchableOpacity>
   );
 };
@@ -76,7 +76,6 @@ const styles = StyleSheet.create({
     marginTop: 12,
     width: '100%',
     height: 1,
-    backgroundColor: colors[Platform.OS].grey,
   },
 });
 

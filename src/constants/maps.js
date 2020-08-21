@@ -4,3 +4,5 @@ export const mapConstants = {
     longitudeDelta: 0.0021,
   },
 };
+
+export const mapDelta = 0.001;
