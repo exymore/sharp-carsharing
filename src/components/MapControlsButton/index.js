@@ -9,8 +9,8 @@ const MapControlsButton = ({ icon, handleClick }) => {
   const styles = StyleSheet.create({
     button: {
       marginVertical: 8,
-      width: 42,
-      height: 42,
+      width: 40,
+      height: 40,
       borderRadius: 100,
       justifyContent: 'center',
       alignItems: 'center',

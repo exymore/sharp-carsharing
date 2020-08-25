@@ -4,7 +4,6 @@ import { View, StyleSheet } from 'react-native';
 import { DEVICE } from '../../constants';
 import { LocationContext } from '../../context/location';
 import MapMarker from '../MapMarker';
-import { mapConstants } from '../../constants/maps';
 
 const Map = ({ region }) => {
   const location = useContext(LocationContext);

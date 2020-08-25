@@ -1,6 +1,6 @@
 export const mapConstants = {
   mapDeltas: {
-    latitudeDelta: 0.005,
+    latitudeDelta: 0.0001,
     longitudeDelta: 0.0021,
   },
 };
