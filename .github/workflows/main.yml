@@ -11,4 +11,4 @@ jobs:
       - uses: ahmadnassri/action-dependabot-auto-merge@v2
         with:
           target: minor
-          github-token: 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
+          github-token: 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
